@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>API Documentation</h1>
+            <p class="lead">Welcome to the Cocktail and User Management API made by Tiziano Rios</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>User Endpoints</h2>
+            </div>
+            <div class="card-body">
+                <h5>Get All Users</h5>
+                <pre><code>GET /usuarios</code></pre>
+                <p>Fetches a list of all users.</p>
+
+                <h5>Create a New User</h5>
+                <pre><code>POST /usuarios</code></pre>
+                <p>Creates a new user.</p>
+                <p><strong>Request Body:</strong></p>
+                <pre><code>{
+    "username": "exampleUser",
+    "email": "user@example.com",
+    "password": "securepassword",
+    "plan": "free"
+}</code></pre>
+
+                <h5>Get User by ID</h5>
+                <pre><code>GET /usuarios/:id</code></pre>
+                <p>Fetches a user by their ID.</p>
+
+                <h5>Update User by ID</h5>
+                <pre><code>PUT /usuarios/:id</code></pre>
+                <p>Updates a user's details by their ID.</p>
+                <p><strong>Request Body:</strong></p>
+                <pre><code>{
+    "username": "newUsername",
+    "email": "newemail@example.com",
+    "password": "newpassword",
+    "plan":"premium"
+}</code></pre>
+
+                <h5>Delete User by ID</h5>
+                <pre><code>DELETE /usuarios/:id</code></pre>
+                <p>Deletes a user by their ID.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>Cocktail Endpoints</h2>
+            </div>
+            <div class="card-body">
+                <h5>Get All Cocktails</h5>
+                <pre><code>GET /cocktails</code></pre>
+                <p>Fetches a list of all cocktails.</p>
+
+                <h5>Create a New Cocktail</h5>
+                <pre><code>POST /cocktails</code></pre>
+                <p>Creates a new cocktail.</p>
+                <p><strong>Request Body:</strong></p>
+                <pre><code>{
+    "name": "Mojito",
+    "category": "Classic",
+    "season": "Summer",
+    "photo": "url-to-photo",
+    "taste": "Refreshing",
+    "glassware": "Highball",
+    "method": "Muddle, Mix",
+    "ingredients": ["Mint", "Sugar", "Lime", "Rum", "Soda"],
+    "instructions": "Muddle mint and sugar, add lime juice and rum, top with soda.",
+    "userId": "user-uuid"
+}</code></pre>
+
+                <h5>Get Cocktail by ID</h5>
+                <pre><code>GET /cocktails/:id</code></pre>
+                <p>Fetches a cocktail by its ID.</p>
+
+                <h5>Update Cocktail by ID</h5>
+                <pre><code>PUT /cocktails/:id</code></pre>
+                <p>Updates a cocktail's details by its ID.</p>
+                <p><strong>Request Body:</strong></p>
+                <pre><code>{
+    "name": "Updated Name",
+    "category": "Updated Category",
+    "season": "Updated Season",
+    "photo": "updated-url-to-photo",
+    "taste": "Updated Taste",
+    "glassware": "Updated Glassware",
+    "method": "Updated Method",
+    "ingredients": ["Updated", "Ingredients"],
+    "instructions": "Updated instructions.",
+    "userId": "user-uuid"
+}</code></pre>
+
+                <h5>Delete Cocktail by ID</h5>
+                <pre><code>DELETE /cocktails/:id</code></pre>
+                <p>Deletes a cocktail by its ID.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Cocktail and User Management API</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
